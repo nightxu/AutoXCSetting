@@ -357,7 +357,7 @@ def main(argv):
     print ("path is <" + path + ">\n");
 
 
-    #__pod_install(name,path)
+    __pod_install(name,path)
     __make_project_folder_structure(name,path);
 
 
