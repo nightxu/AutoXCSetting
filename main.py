@@ -104,16 +104,16 @@ end
 
 # 添加文件到target 的 group
 def add__file_to_group (name,group,target)
-    # 设置文件引用是否存在标识  
-    file_ref_mark = false  
-    # 获取全部的文件引用  
-    file_ref_list = target.source_build_phase.files_references  
-    # 检测需要添加的文件是否存在  
-    for file_ref_temp in file_ref_list  
-        puts file_ref_temp.path.to_s  
-        if file_ref_temp.path.to_s.end_with?(name) then  
-            file_ref_mark = true  
-        end  
+    # 设置文件引用是否存在标识
+    file_ref_mark = false
+    # 获取全部的文件引用
+    file_ref_list = target.source_build_phase.files_references
+    # 检测需要添加的文件是否存在
+    for file_ref_temp in file_ref_list
+        puts file_ref_temp.path.to_s
+        if file_ref_temp.path.to_s.end_with?(name) then
+            file_ref_mark = true
+        end
     end
     if file_ref_mark == true
         return;
@@ -244,7 +244,7 @@ target '$XCPROJECT$' do
   # use_frameworks!
 
   # Pods for $XCPROJECT$
-  
+
     pod 'MLeaksFinder', '~> 1.0.0'
     pod 'AFNetworking', '~> 3.1.0'
     pod 'Masonry', '~> 1.1.0'
@@ -254,6 +254,7 @@ target '$XCPROJECT$' do
     pod 'SDWebImage', '~> 4.1.2'
     pod 'FLAnimatedImage', '~> 1.0.12'
     pod 'YYCategories', '~> 1.0.4'
+    pod 'BlocksKit', '~> 2.2.5'
     
     # BUG 异常获取上传
     # pod 'Bugly', '~> 2.4.8'
@@ -262,8 +263,8 @@ target '$XCPROJECT$' do
     pod 'FDFullscreenPopGesture', '~> 1.1'
     # 网络监听
     pod 'RealReachability', '~> 1.1.9'
-    
-    
+
+
     # U-Share SDK UI模块（分享面板，建议添加）
     # pod 'UMengUShare/UI'
 
@@ -272,7 +273,7 @@ target '$XCPROJECT$' do
 
     # 集成QQ(精简版0.5M)
     # pod 'UMengUShare/Social/ReducedQQ'
-    
+
     # 集成新浪微博(精简版1M)
     # pod 'UMengUShare/Social/ReducedSina'
 
@@ -287,7 +288,7 @@ target '$XCPROJECT$' do
 
     # 集成WhatsApp
     # pod 'UMengUShare/Social/WhatsApp'
-    
+
 end
 """
     content = content.replace("$XCPROJECT$",name);
